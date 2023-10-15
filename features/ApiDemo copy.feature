@@ -1,0 +1,70 @@
+Feature: API to add a new pet to the store.
+
+    Scenario: Add a new pet to collection.
+        Given a request call url baseurl
+            And a request path /pet
+            And the request payload is petbody
+            #/body/pet.template
+            And payload inputs
+                |Name         |Value|
+                |id           |135  |
+                |category_name|Cat  |
+                |pet_name     |Selia|
+            And request headers
+                |param  |value |
+                |Content-Type|application/json|
+                |Accept|application/json|
+                |CustomeHeader|${pet_name}|
+        When the request sends POST
+        Then the response status is 200
+        And  Assert response matches the schema petaddscema
+            And  the response json at $.name is equal to "Selia"  
+            And  the response json at $.status is equal to "available"
+            And  keep response part $.name in petname
+
+
+Scenario: Get an existing pet working
+    # Given  a request url https://petstore.swagger.io/v2/pet/
+    Given  request parameters
+            |param  |value  |
+            |petid  |123    |
+    And a request url https://petstore.swagger.io/v2/pet/${petid}
+    # And  request parameters
+            # |petid |  123 |
+            # | param    | value   |
+            # | petid    | 123     |
+        And  request headers
+            |param  |value              |
+            |accept |application/json   |
+        When the request sends GET
+        Then the response status is 200
+
+
+
+Scenario: Get an existing pet working versions2
+    Given a request url https://petstore.swagger.io/v2/pet/${petid}
+        And  request headers
+            |param  |value              |
+            |accept |application/json   |
+        When the request sends GET
+        Then the response status is 200
+
+
+#     Scenario: Get an existing pet
+#     Given  a request url https://petstore.swagger.io/v2/pet/<petid>
+#     # And  request parameters
+#             # |param  |value  |
+#             # |petid  |123    |
+#             |petid |  
+#             |123   |
+#     # And a request url https://petstore.swagger.io/v2/pet/<petid>
+#     # And  request parameters
+#             # |petid |  123 |
+#             # | param    | value   |
+#             # | petid    | 123     |
+#         And  request headers
+#             |param  |value              |
+#             |accept |application/json   |
+#         When the request sends GET
+#         Then the response status is 200
+

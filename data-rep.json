@@ -1,3 +1,661 @@
 [
-{"keyword": "Feature", "name": "test demo", "tags": [], "location": "features/test-demo.feature:1", "status": "failed", "elements": [{"type": "scenario", "keyword": "Scenario", "name": "create product in cpib", "tags": [], "location": "features/test-demo.feature:2", "steps": [{"keyword": "Given", "step_type": "given", "name": "a request url https://cpib-integration.apps.fr01.paas.tech.orange/productManagement/v1/product", "location": "features/test-demo.feature:3", "match": {"location": "behave-api/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:7", "arguments": [{"value": "https://cpib-integration.apps.fr01.paas.tech.orange/productManagement/v1/product", "name": "url"}]}, "result": {"status": "passed", "duration": 0.00021600723266601562}}, {"keyword": "And", "step_type": "given", "name": "request headers", "location": "features/test-demo.feature:4", "table": {"headings": ["param", "value"], "rows": [["Content-Type", "application/json"], ["Accept", "*/*"], ["Accept-Encoding", "gzip, deflate, br"], ["Connection", "keep-alive"]]}, "match": {"location": "behave-api/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:17", "arguments": []}, "result": {"status": "passed", "duration": 3.981590270996094e-05}}, {"keyword": "And", "step_type": "given", "name": "the request payload is body", "location": "features/test-demo.feature:10", "match": {"location": "features/steps/givens.py:19", "arguments": [{"value": "body", "name": "payload_file_path"}]}, "result": {"status": "passed", "duration": 0.0002288818359375}}, {"keyword": "And", "step_type": "given", "name": "payload inputs", "location": "features/test-demo.feature:11", "table": {"headings": ["Name", "Value"], "rows": [["id", "0"]]}, "match": {"location": "features/steps/givens.py:30", "arguments": []}, "result": {"status": "passed", "duration": 0.001505136489868164}}, {"keyword": "When", "step_type": "when", "name": "the request sends POST", "location": "features/test-demo.feature:14", "match": {"location": "behave-api/lib/python3.10/site-packages/behave_restful/lang/_when_steps.py:7", "arguments": [{"value": "POST", "name": "method"}]}, "result": {"status": "failed", "duration": 0.08600187301635742, "error_message": ["Traceback (most recent call last):", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connection.py\", line 174, in _new_conn", "    conn = connection.create_connection(", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/util/connection.py\", line 72, in create_connection", "    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):", "  File \"/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py\", line 955, in getaddrinfo", "    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):", "socket.gaierror: [Errno 8] nodename nor servname provided, or not known", "", "During handling of the above exception, another exception occurred:", "", "Traceback (most recent call last):", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connectionpool.py\", line 703, in urlopen", "    httplib_response = self._make_request(", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connectionpool.py\", line 386, in _make_request", "    self._validate_conn(conn)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connectionpool.py\", line 1042, in _validate_conn", "    conn.connect()", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connection.py\", line 358, in connect", "    self.sock = conn = self._new_conn()", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connection.py\", line 186, in _new_conn", "    raise NewConnectionError(", "urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x106b82b90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known", "", "During handling of the above exception, another exception occurred:", "", "Traceback (most recent call last):", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/requests/adapters.py\", line 489, in send", "    resp = conn.urlopen(", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/connectionpool.py\", line 787, in urlopen", "    retries = retries.increment(", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/urllib3/util/retry.py\", line 592, in increment", "    raise MaxRetryError(_pool, url, error or ResponseError(cause))", "urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='cpib-integration.apps.fr01.paas.tech.orange', port=443): Max retries exceeded with url: /productManagement/v1/product (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x106b82b90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))", "", "During handling of the above exception, another exception occurred:", "", "Traceback (most recent call last):", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/behave/model.py\", line 1329, in run", "    match.run(runner.context)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/behave/matchers.py\", line 98, in run", "    self.func(context, *args, **kwargs)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/behave_restful/lang/_when_steps.py\", line 11, in step_impl", "    request_method(context)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/behave_restful/_lang_imp/request_invoker.py\", line 21, in send_post", "    context.response = context.session.post(", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/requests/api.py\", line 115, in post", "    return request(\"post\", url, data=data, json=json, **kwargs)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/requests/api.py\", line 59, in request", "    return session.request(method=method, url=url, **kwargs)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/requests/sessions.py\", line 587, in request", "    resp = self.send(prep, **send_kwargs)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/requests/sessions.py\", line 701, in send", "    r = adapter.send(request, **kwargs)", "  File \"/Users/700da/work/behave-api/behave-api/lib/python3.10/site-packages/requests/adapters.py\", line 565, in send", "    raise ConnectionError(e, request=request)", "requests.exceptions.ConnectionError: HTTPSConnectionPool(host='cpib-integration.apps.fr01.paas.tech.orange', port=443): Max retries exceeded with url: /productManagement/v1/product (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x106b82b90>: Failed to establish a new connection: [Errno 8] nodename nor servname provided, or not known'))"]}}, {"keyword": "Then", "step_type": "then", "name": "the response status is 201", "location": "features/test-demo.feature:15"}, {"keyword": "And", "step_type": "then", "name": "dump response", "location": "features/test-demo.feature:16"}], "status": "failed"}]}
+{
+  "elements": [
+    {
+      "keyword": "Background",
+      "location": "features/ApiDemo copyBackGnd.feature:3",
+      "name": "Set background data for the scenarios",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:4",
+          "name": "data setup",
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "mypetid",
+                "2"
+              ]
+            ]
+          }
+        }
+      ],
+      "type": "background"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/ApiDemo copyBackGnd.feature:8",
+      "name": "Add a new pet to collection.",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/givens.py:70"
+          },
+          "name": "data setup",
+          "result": {
+            "duration": 6.127357482910156e-05,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "mypetid",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "url",
+                "value": "baseurl"
+              }
+            ],
+            "location": "features/steps/givens.py:11"
+          },
+          "name": "a request call url baseurl",
+          "result": {
+            "duration": 0.0004138946533203125,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:10",
+          "match": {
+            "arguments": [
+              {
+                "name": "path",
+                "value": "/pet/"
+              }
+            ],
+            "location": "features/steps/givens.py:20"
+          },
+          "name": "a request path /pet/",
+          "result": {
+            "duration": 5.412101745605469e-05,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:11",
+          "match": {
+            "arguments": [
+              {
+                "name": "payload_file_path",
+                "value": "petbody"
+              }
+            ],
+            "location": "features/steps/givens.py:25"
+          },
+          "name": "the request payload is petbody",
+          "result": {
+            "duration": 0.00015592575073242188,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:13",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/givens.py:36"
+          },
+          "name": "payload inputs",
+          "result": {
+            "duration": 0.002668142318725586,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "Name",
+              "Value"
+            ],
+            "rows": [
+              [
+                "id",
+                "0"
+              ],
+              [
+                "category_name",
+                "Cat"
+              ],
+              [
+                "pet_name",
+                "Selia"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:18",
+          "match": {
+            "arguments": [
+              {
+                "name": "header_file_path",
+                "value": "basicheader"
+              }
+            ],
+            "location": "features/steps/givens.py:81"
+          },
+          "name": "the request headers template is basicheader",
+          "result": {
+            "duration": 4.072782039642334,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/ApiDemo copyBackGnd.feature:22",
+          "match": {
+            "arguments": [
+              {
+                "name": "method",
+                "value": "POST"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_when_steps.py:7"
+          },
+          "name": "the request sends POST",
+          "result": {
+            "duration": 0.6944141387939453,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/ApiDemo copyBackGnd.feature:23",
+          "match": {
+            "arguments": [
+              {
+                "name": "status",
+                "value": "200"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_then_steps.py:7"
+          },
+          "name": "the response status is 200",
+          "result": {
+            "duration": 0.0008881092071533203,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:24",
+          "match": {
+            "arguments": [
+              {
+                "name": "schema_ref",
+                "value": "petaddscema"
+              }
+            ],
+            "location": "features/steps/thens.py:12"
+          },
+          "name": "Assert response matches the schema petaddscema",
+          "result": {
+            "duration": 0.005681753158569336,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:25",
+          "match": {
+            "arguments": [
+              {
+                "name": "json_path",
+                "value": "$.name"
+              },
+              {
+                "name": "value_str",
+                "value": "\"Selia\""
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_then_steps.py:23"
+          },
+          "name": "the response json at $.name is equal to \"Selia\"",
+          "result": {
+            "duration": 0.0007936954498291016,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:26",
+          "match": {
+            "arguments": [
+              {
+                "name": "json_path",
+                "value": "$.status"
+              },
+              {
+                "name": "value_str",
+                "value": "\"available\""
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_then_steps.py:23"
+          },
+          "name": "the response json at $.status is equal to \"available\"",
+          "result": {
+            "duration": 0.0001552104949951172,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:27",
+          "match": {
+            "arguments": [
+              {
+                "name": "json_path_expr",
+                "value": "$.name"
+              },
+              {
+                "name": "var_name",
+                "value": "petname"
+              }
+            ],
+            "location": "features/steps/thens.py:25"
+          },
+          "name": "keep response part $.name in petname",
+          "result": {
+            "duration": 0.00011992454528808594,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:28",
+          "match": {
+            "arguments": [
+              {
+                "name": "json_path_expr",
+                "value": "$.id"
+              },
+              {
+                "name": "var_name",
+                "value": "added_pet_id"
+              }
+            ],
+            "location": "features/steps/thens.py:25"
+          },
+          "name": "keep response part $.id in added_pet_id",
+          "result": {
+            "duration": 0.00010800361633300781,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:29",
+          "match": {
+            "arguments": [
+              {
+                "name": "regex",
+                "value": "id\":\\s*(\\d+),"
+              },
+              {
+                "name": "var_name",
+                "value": "pet_id_rgx"
+              }
+            ],
+            "location": "features/steps/thens.py:48"
+          },
+          "name": "extract a response regex id\":\\s*(\\d+), as pet_id_rgx",
+          "result": {
+            "duration": 0.00020599365234375,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:30",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/thens.py:79"
+          },
+          "name": "dump response",
+          "result": {
+            "duration": 0.0006279945373535156,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/ApiDemo copyBackGnd.feature:33",
+      "name": "Get an existing pet working",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/givens.py:70"
+          },
+          "name": "data setup",
+          "result": {
+            "duration": 9.703636169433594e-05,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "mypetid",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:34",
+          "match": {
+            "arguments": [],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:22"
+          },
+          "name": "request parameters",
+          "result": {
+            "duration": 0.00013899803161621094,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "petid",
+                "${pet_id_rgx}"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:37",
+          "match": {
+            "arguments": [
+              {
+                "name": "url",
+                "value": "https://petstore.swagger.io/v2/pet/${petid}"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:7"
+          },
+          "name": "a request url https://petstore.swagger.io/v2/pet/${petid}",
+          "result": {
+            "duration": 0.00011205673217773438,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:38",
+          "match": {
+            "arguments": [],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:17"
+          },
+          "name": "request headers",
+          "result": {
+            "duration": 0.00010085105895996094,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "accept",
+                "application/json"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "When",
+          "location": "features/ApiDemo copyBackGnd.feature:41",
+          "match": {
+            "arguments": [
+              {
+                "name": "method",
+                "value": "GET"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_when_steps.py:7"
+          },
+          "name": "the request sends GET",
+          "result": {
+            "duration": 0.5892751216888428,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/ApiDemo copyBackGnd.feature:42",
+          "match": {
+            "arguments": [
+              {
+                "name": "status",
+                "value": "200"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_then_steps.py:7"
+          },
+          "name": "the response status is 200",
+          "result": {
+            "duration": 0.00015211105346679688,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:43",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/thens.py:60"
+          },
+          "name": "debug response",
+          "result": {
+            "duration": 5.068220138549805,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/ApiDemo copyBackGnd.feature:46",
+      "name": "Get an existing pet working versions2",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/givens.py:70"
+          },
+          "name": "data setup",
+          "result": {
+            "duration": 0.00013971328735351562,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "mypetid",
+                "2"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "Given",
+          "location": "features/ApiDemo copyBackGnd.feature:47",
+          "match": {
+            "arguments": [
+              {
+                "name": "url",
+                "value": "https://petstore.swagger.io/v2/pet/${added_pet_id}"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:7"
+          },
+          "name": "a request url https://petstore.swagger.io/v2/pet/${added_pet_id}",
+          "result": {
+            "duration": 0.0001609325408935547,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "And",
+          "location": "features/ApiDemo copyBackGnd.feature:48",
+          "match": {
+            "arguments": [],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_given_steps.py:17"
+          },
+          "name": "request headers",
+          "result": {
+            "duration": 0.000102996826171875,
+            "status": "passed"
+          },
+          "step_type": "given",
+          "table": {
+            "headings": [
+              "param",
+              "value"
+            ],
+            "rows": [
+              [
+                "accept",
+                "application/json"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "When",
+          "location": "features/ApiDemo copyBackGnd.feature:51",
+          "match": {
+            "arguments": [
+              {
+                "name": "method",
+                "value": "GET"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_when_steps.py:7"
+          },
+          "name": "the request sends GET",
+          "result": {
+            "duration": 0.5764689445495605,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/ApiDemo copyBackGnd.feature:52",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/thens.py:60"
+          },
+          "name": "debug response",
+          "result": {
+            "duration": 1.3366782665252686,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/ApiDemo copyBackGnd.feature:53",
+          "match": {
+            "arguments": [
+              {
+                "name": "status",
+                "value": "200"
+              }
+            ],
+            "location": "venv/lib/python3.10/site-packages/behave_restful/lang/_then_steps.py:7"
+          },
+          "name": "the response status is 200",
+          "result": {
+            "duration": 0.0001609325408935547,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/ApiDemo copyBackGnd.feature:1",
+  "name": "API to add a new pet to the store.",
+  "status": "passed",
+  "tags": []
+}
 ]

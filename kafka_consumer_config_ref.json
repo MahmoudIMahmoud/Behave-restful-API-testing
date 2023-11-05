@@ -1,0 +1,18 @@
+{
+    "bootstrap_servers": "localhost:9092",
+    "group_id": "mygroup",
+    "auto_offset_reset":  " earliest" ,
+    "enable_auto_commit":  true ,
+    "auto_commit_interval_ms":  5000,
+    "max_poll_records":  100,
+    "fetch_max_wait_ms":  1000,
+    "max_poll_interval_ms":  60000,
+    "security_protocol": "SASL_PLAINTEXT",
+    "sasl_mechanism": "PLAIN",
+    "sasl_plain_username": "your_username",
+    "sasl_plain_password": "your_password",
+    "ssl_cafile": "/path/to/ca_cert.pem",
+    "ssl_certfile": "/path/to/client_cert.pem",
+    "ssl_keyfile": "/path/to/client_key.pem",
+    "ssl_password": "key_password"
+}
